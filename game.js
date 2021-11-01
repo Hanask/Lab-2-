@@ -1,5 +1,5 @@
 function Bear() {
-    this.dBear = 100;
+    this.dBear = setSpeed();
     this.htmlElement = document.getElementById("bear");
     this.id = this.htmlElement.id;
     this.x = this.htmlElement.offsetLeft;
@@ -27,13 +27,11 @@ function Bear() {
         if (this.x > w - iw) this.x = w - iw;
         if (this.y < 0) this.y = 0;
         if (this.y > h - ih) this.y = h - ih;
-        };
-    this.setSpeed=function(){
-        //get speed input field value
-        let speed = document.getElementById("speedBears").value;
-        // return speed;
-        }
-           
+        };   
+}
+function setSpeed(){
+    //get speed input field value
+    return document.getElementById("speedBears").value;
 }
 
 function start() {
@@ -41,8 +39,6 @@ function start() {
     bear = new Bear();
     // Add an event listener to the keypress event.
     document.addEventListener("keydown", moveBear, false);
-    //speed of the bear
-    bear.setSpeed();
     //create new array for bees
     bees = new Array();
     //create bees
