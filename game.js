@@ -1,10 +1,11 @@
 function Bear() {
-    this.dBear = setSpeed();
+    this.dBear = document.getElementById("speedBears").value;
     this.htmlElement = document.getElementById("bear");
     this.id = this.htmlElement.id;
     this.x = this.htmlElement.offsetLeft;
     this.y = this.htmlElement.offsetTop;
     this.move = function(xDir, yDir) {
+        this.dBear=setSpeed();
         this.fitBounds(); //we add this instruction to keep bear within board
         this.x += this.dBear * xDir;
         this.y += this.dBear * yDir;
@@ -39,7 +40,7 @@ function start() {
     bear = new Bear();
     // Add an event listener to the keypress event.
     document.addEventListener("keydown", moveBear, false);
-    document.getElementById("speedBears").addEventListener("change",setSpeed);
+    //document.getElementById("speedBears").addEventListener("change",setSpeed);
     //create new array for bees
     bees = new Array();
     //create bees
